@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>신분세탁소</title>
+    <style>
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Pretendard-Black';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff');
+            font-weight: 900;
+            font-style: normal;
+        }
+        html {
+            font-family: 'Pretendard-Regular';
+            line-height: 1.5;
+            box-sizing: border-box;
+        }
+
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        h2 {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+.section {
+    height: 100vh; 
+   
+}
+
+        .top-right-text {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: right;
+            color: black;
+            z-index: 1;
+        }
+
+        .section-content {
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+
+        .wrap {
+            width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 150px 1fr 150px; 
+            grid-gap: 20px;
+            align-items: center;
+        }
+
+        
+        #section1 {
+            color: black; 
+        }
+
+
+        #section2 {
+            padding-top: 0px;
+        }
+
+        #section3 {
+            padding-top: 200px;
+            padding-left: 150px;
+            padding-right: 150px;
+            padding-bottom: ;
+            background-color: black; 
+            color: white; 
+        }
+
+        #section4 {
+            padding-top: 200px;
+            padding-left: 150px;
+            padding-right: 150px;
+            background-color: black;
+            color: white; 
+        }
+
+        #section5 {
+            padding-top: 200px;
+            background-color: black;
+            color: white;
+        }
+
+         #section6 {
+            padding-top: 200px;
+            padding-left: 150px;
+            padding-right: 150px;
+            background-color: black;
+            color: white;
+        }
+
+        #section7 {
+            padding-top: 50px;
+            padding-left: 150px;
+            padding-right: 150px;
+            background-color: black; 
+            color: white; 
+        }
+
+        #section8 {
+            padding-top: 50px;
+            padding-left: 150px;
+            padding-right: 150px;
+            background-color: black; 
+            color: white;
+        }
+        #section9 {
+            padding-top: 100px;
+            padding-left: 150px;
+            padding-right: 150px;
+            background-color: black; 
+            color: white; 
+        }
+
+        #section10 {
+            padding-top: 50px;
+            padding-left: 150px;
+            padding-right: 150px;
+            background-color: black;
+            color: white; 
+        }
+
+        #section11 {
+            padding-top: 100px;
+            padding-left: 150px;
+            padding-right: 150px;
+            background-color: black;
+            color: white; 
+        }
+
+        #section12 {
+            padding-top: 50px;
+            padding-left: 150px;
+            padding-right: 150px;
+            padding-bottom: 100px;
+            background-color: black; 
+            color: white;
+        }
+
+        #section13 {
+            padding-top: 100px;
+            padding-left: 150px;
+            padding-right: 150px;
+            background-color: white;
+            color: black; 
+        }
+
+        #section14 {
+            padding-top: 100px;
+            padding-left: 150px;
+            padding-right: 150px;
+            padding-bottom: 150px;
+            background-color: white;
+            color: black; 
+        }
+
+        #section14 h2 {
+    /* 호버 전 기본 스타일 */
+    color: black; /* 텍스트 색상 */
+    background-color: transparent; /* 배경색 */
+    padding: 10px 20px; /* 내부 여백 */
+    cursor: pointer; /* 커서 스타일을 포인터로 변경하여 클릭 가능한 상태로 만듦 */
+    transition: all 0.3s ease; /* 호버 효과의 부드러운 전환을 위한 transition 속성 추가 */
+    font-size: 24px; /* 기본 폰트 크기 */
+}
+
+#section14 h2:hover {
+    /* 호버 시 적용될 스타일 지정 */
+    color: black; /* 텍스트 색상 */
+    background-color: transparent;
+    font-size: 40px; /* 호버 시 크게 변경할 폰트 크기 */
+}
+
+
+        .section-buttons-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            transition: opacity 0.3s ease;
+            opacity: 1;
+            z-index: 999;
+        }
+
+        .section-buttons-container.hidden {
+            opacity: 0;
+        }
+
+        .section-button {
+            background-color: transparent;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border: none; 
+            outline: none; 
+        }
+
+        .section-button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* 섹션3의 이미지 크기 조정 */
+        #section3 .wrap img {
+            max-width: 50%;
+        }
+
+        /* 네비게이션 바 스타일 */
+        nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, 0.5); /* 투명한 배경 */
+            padding: 10px 20px;
+            border-radius: 0px;
+            backdrop-filter: blur(10px); /* 블러 효과 */
+        }
+          
+        #section3 .grid-container {
+            grid-template-columns: auto 1fr;
+        }
+
+    #section3 .grid-container {
+        grid-template-columns: 1fr 1fr; 
+        grid-gap: 20px; 
+    }
+
+        #section3 .grid-container img {
+            width: 100%;
+        }
+
+        #section4 .grid-container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    justify-items: center; 
+}
+
+#section4 .grid-container h2,
+#section4 .grid-container p {
+    grid-column: 1; 
+    text-align: center; 
+}
+
+        #section4 .wrap {
+            justify-self: end; 
+        }
+
+#section5 .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-gap: 0px;
+    align-items: center;
+}
+
+#section5 h2 {
+    padding-top: 0; 
+}
+
+#section5 .grid-container > div:first-child {
+    align-self: start;
+    padding-left: 150px; 
+    padding-top: 0px;
+}
+
+#section5 .grid-container div:nth-child(2) {
+    align-self: start; 
+}
+
+#section5 .grid-container > div:first-child {
+    grid-column: 1 / span 1;
+}
+
+#section5 img {
+    max-width: 100%; 
+    height: auto; 
+    display: block;
+    margin: 0 auto;
+    }
+#section6 h2 {
+    padding-top: 0;
+    }
+
+
+#section7 .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 40px; 
+}
+#section7 .grid-container div:nth-child(2) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px; 
+}
+
+#section7 .grid-container div:nth-child(4) {
+    text-align: left; 
+    align-self: start;
+}
+
+#section8 .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 40px; 
+}
+
+#section8 .grid-container div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+#section8 .grid-container div:nth-child(4) {
+    text-align: left;
+    align-self: start;
+}
+
+#section9 .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 40px; /* 그리드 간격 설정 */
+}
+
+#section9 .grid-container div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+#section9 .grid-container div:nth-child(4) {
+    text-align: left; 
+    align-self: start;
+}
+
+#section10 .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 40px; 
+}
+
+#section10 .grid-container div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+#section10 .grid-container div:nth-child(4) {
+    text-align: left;
+    align-self: start;
+}
+
+#section11 .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px; 
+}
+
+#section11 .grid-container div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px; /* 원하는 크기로 설정 */
+}
+
+#section11 .grid-container div:nth-child(4) {
+    text-align: left; /* 텍스트를 좌측 정렬로 설정 */
+    align-self: start;
+}
+
+#section12 .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+}
+
+#section12 .grid-container div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px; 
+}
+
+#section12 .grid-container div:nth-child(4) {
+    text-align: left; 
+    align-self: start;
+}
+
+#section13 .grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    grid-gap: 40px; 
+}
+
+#section13 .grid-container div:nth-child(1) {
+    text-align: left; 
+    align-self: start;
+}
+#section13 .grid-container div:nth-child(2) {
+    text-align: left;
+    align-self: start;
+}
+#section13 h2 {
+    padding-top: 0;
+    }
+
+#section14 .grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    grid-gap: 20px; 
+}
+
+#section14 .grid-container div:nth-child(3) {
+    text-align: center; 
+    align-self: start;
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="section-buttons-container">
+        <button class="section-button" onclick="scrollToSection('section3')">About</button>
+<button class="section-button" onclick="scrollToSection('section5')">Product</button>
+<button class="section-button" onclick="scrollToSection('section6')">Review</button>
+<button class="section-button" onclick="scrollToSection('section13')">Application</button>
+
+    </nav>
+    
+<section id="section1">
+    <div class="wrap" style="position: relative; width: 100%;">
+    <img src="2. first image.jpg" alt="First Image">
+        <div class="text-overlay" style="position: absolute; top: 50%; right: 150px; transform: translate(0, -50%); z-index: 2; text-align: right;">
+            <h2 style="padding-right: 0px; font-size: 50px;">Welcome.<br>We are Identity Laundry.</h2>
+        </div>
+    </div>
+</section>
+
+    <section id="section2">
+        <div class="wrap" style="width: 100%;">
+            <img src="3. second image.jpg" alt="Second Image">
+        </div>
+    </section>
+
+    <section id="section3">
+        <div class="wrap">
+            <div class="grid-container">
+                <div>
+                    <img src="4.ilo.jpg">
+                </div>
+                <div class="right-spacing">
+                    <h2>Identity laundry Organizations, ILO</h2>
+                    <p>신분 세탁 기술 개발은 비영리 단체인 Identity laundry Organizations, ILO에<br>의해 이뤄지고 있습니다. ILO는 매주 새로운 임상 실험을 통해 혁신적이고<br>안전한 방식의 신분 세탁을 목표로 두고 있습니다. 현재 ILO에서 제시하는 안전한 방법의<br>신분 세탁은 번데기의 나비 우화 과정을 기반으로 한 단백질 산성 분해 방법입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="section4">
+        <div class="wrap">
+            <div class="grid-container">
+                <h2>번데기의 단백질 효소 분해란?</h2>
+                <p>번데기 안의 애벌레는 나비가 되기 위해 위액을 토해내, 소화 효소가 가득한<br>작은 공간에 갇히게 됩니다. 산성의 액체에 의해 애벌레의 모든 세포는 분열되어<br>날개, 눈, 더듬이 등의 신체 기관을 갖게 되며, 성충이 됩니다.<br><br>저희 세탁소에서는 애벌레의 단백질 분해 과정을 통해 새로운 인간으로의<br>전환을 시도하고 있습니다.<br><br>여러분들도 아름다운 나비의 우화를 신분 세탁소에서 경험해보세요.</p>
+            </div>
+            <img src="5. pupa fable.gif">
+        </div>
+    </section>
+
+<section id="section5">
+    <div class="wrap">
+        <div class="grid-container">
+            <div style="text-align: left;">
+                <h2>ACID DREAM</h2>
+                <p>ACID DREAM은 한명의 인간을 수용할 수 있는 공간을<br>지닌 세탁실입니다. 세탁 방법은 한 가지로 번데기의 우화와<br>동일한 방식의 과정으로 10일 간의 기간이 소요됩니다.<br><br>현재 비영리 단체인 Identity laundry Organizations,<br>ILO에 의해 제작 및 개발되고 있으며, 전세계에 2대의 제품만<br>실제 가동 중입니다.<br><br>7*3.3m의 크기를 지닌 거대 세탁실이며, 큰 규모로 인해<br>이동이 어려우므로 현재는 방문 서비스만 접수 가능합니다.</p>
+            </div>
+            <div>
+                <img src="7. shower room.png" alt="이미지 설명">
+            </div>
+            <div>
+                <img src="6. acid dream.png" alt="이미지 설명">
+            </div>
+        </div>
+    </div>
+    <img src="8. cylinder.png" alt="Image Description">
+</section>
+
+<section id="section6">
+    <div class="wrap">
+        <h2>Review</h2>
+        <p>신분 세탁 서비스를 받으신 고객님들의 Before / After, 후기입니다.<br>직접 작성하신 후기로, 고객님들의 솔직한 경험들을 담고 있습니다.</p>
+</section>
+
+<section id="section7">
+    <div class="wrap">
+        <div class="grid-container">
+            <div>
+                <img src="frame 1.png" alt="Image 1">
+            </div>
+            <div> -> </div>
+            <div>
+                <img src="frame 2.png" alt="Image 2">
+            </div>
+            <div>I was able to board a plane without 
+                raising any suspicion. It was so 
+                convenient that even my acquaintances didn't recognize me, so I disappeared 
+                comfortably. I could have been missing
+                without any inconvenience. 
+                I’d love to try the service once again.<br><br><br><br>
+                아무런 의심 없이 비행기에 탑승할 수 있었습니다.<br>너무 편리해서 지인들도 알아보지 못해서 편하게<br>사라졌어요. 불편함 없이 실종될 수 있었죠.<br>다시 한번 서비스를 받아보고 싶습니다.</div>
+        </div>
+    </div>
+</section>
+
+<section id="section8">
+    <div class="wrap">
+        <div class="grid-container">
+            <div>
+            인종: 황인<br>
+            키: 165cm<br>
+            혈액형: Ab<br>
+            나이: 30대<br>
+            몸무게: 63kg
+            </div>
+            <div></div>
+            <div>
+            인종: 백인<br>
+            키: 158cm<br>
+            혈액형: A<br>
+            나이: 40대<br>
+            몸무게: 58kg
+            </div>
+            <div></div>
+        </div>
+    </div>
+</section>
+
+<section id="section9">
+    <div class="wrap">
+        <div class="grid-container">
+            <div>
+                <img src="frame 3.png" alt="Image 1">
+            </div>
+            <div> -> </div>
+            <div>
+                <img src="frame 4.png" alt="Image 2">
+            </div>
+            <div>My wife didn’t know where I had gone 
+                and reported me missing. Thanks to this, 
+                I was able to easily separate my home 
+                without going through divorce 
+                proceedings. I'm excited to create new 
+                relationships.<br><br><br><br>
+                아내는 내가 어디로 갔는지 몰랐어요. 
+                그리고 제가<br>실종됐다고 신고했어요. 덕분에
+                집에서 쉽게<br>분리할 수 있었어요.
+                이혼을 하지 않고 소송 절차.<br>새로운 것을 창조하게 되어 기쁘다. 관계.
+        </div>
+    </div>
+</section>
+
+<section id="section10">
+    <div class="wrap">
+        <div class="grid-container">
+            <div>
+            인종: 황인<br>
+            키: 169cm<br>
+            혈액형: A<br>
+            나이: 30대<br>
+            몸무게: 85kg
+            </div>
+            <div></div>
+            <div>
+            인종: 황인<br>
+            키: 170cm<br>
+            혈액형: B<br>
+            나이: 40대<br>
+            몸무게: 48kg
+            </div>
+            <div></div>
+        </div>
+    </div>
+</section>
+
+<section id="section11">
+    <div class="wrap">
+        <div class="grid-container">
+            <div>
+                <img src="frame 5.png" alt="Image 1">
+            </div>
+            <div> -> </div>
+            <div>
+                <img src="frame 6.png" alt="Image 2">
+            </div>
+            <div>I wanted to raise a new puppy, so I did 
+                the laundry and it came out as a new 
+                one. Thanks to this, I feel like I’m 
+                getting some ventilation in my daily life. 
+                Feels like raising a new baby!<br><br><br><br>
+                강아지를 새로 키우고 싶어서 빨래를 했는데 새<br>강아지로 나왔어요. 덕분에 일상에 환기가 좀 되는<br>느낌이에요. 갓 태어난 아기를 키우는 기분!
+        </div>
+    </div>
+</section>
+
+<section id="section12">
+    <div class="wrap">
+        <div class="grid-container">
+            <div>
+            종: 포메라니안<br>
+            키: 35cm<br>
+            혈액형: 1.2<br>
+            나이: 7세<br>
+            몸무게: 8kg
+            </div>
+            <div></div>
+            <div>
+            인종: 웰시코기<br>
+            키: 60cm<br>
+            혈액형: 1.1<br>
+            나이: 5세<br>
+            몸무게: 13kg
+            </div>
+            <div></div>
+        </div>
+    </div>
+</section>
+
+ <section id="section13">
+     <div class="wrap">
+     <div class="grid-container">
+            <div>
+                <h2>방문 픽업 서비스 신청</h2>
+            </div>
+            <div>
+                <p>방문 픽업 서비스를 신청하시면,<br>
+                    저희가 직접 신청자 분을 모시고<br>
+                    ACID DREAM의 세탁 전 과정을<br>함께
+                    도와드리게 됩니다.<br><br>
+                    신청자 분의 인적사항을 적어<br>제출해주시면, 
+                    적어주신 연락처로<br>추가 안내사항을
+                    전달드립니다.</p>
+            </div>
+            <div></div>
+            <div>Name<br><br>
+                Birth Date<br><br>
+                Age<br><br>
+                Phone Number</div>
+
+            <div>
+                <input type="text" placeholder="Type here"><br><br><input type="text" placeholder="Type here"><br><br><input type="text" placeholder="Type here"><br><br><input type="text" placeholder="Type here">
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="section14">
+    <div class="wrap">
+        <div class="grid-container">
+            <div></div>
+            <div></div>
+            <div>
+                <h2 onclick="goToHomePage()" style="cursor: pointer;">Submit</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="section15" style="background-color: black;">
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section" style="padding-left: 150px; color: white;">
+                <h2>Contact</h2>
+                <p>If you have any questions or inquiries, feel free to reach out to us.<br><br>
+                Email: info@identitylaundry.com<br>
+                    Phone: +82 010-5773-5507<br>
+                </p>
+            </div>
+            <div class="footer-section" style="padding-right: 150px; color: white;">
+            <div class="footer-section" style="padding-bottom: 100px; color: white;">
+    </footer>
+</section>
+
+
+</body>
+</html>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            var sectionButtonsContainer = document.querySelector('nav');
+            var section2 = document.getElementById('section2');
+
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                sectionButtonsContainer.classList.remove('hidden');
+            } else {
+                sectionButtonsContainer.classList.add('hidden');
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+    var editableText = document.querySelector("#section13 input[type='text']");
+    
+   
+    editableText.previousElementSibling.addEventListener("click", function() {
+        editableText.focus();
+    });
+    
+    editableText.addEventListener("blur", function() {
+        if (this.value.trim() === "") {
+            this.previousElementSibling.style.display = "block"; // 
+            this.style.display = "none"; 
+        }
+    });
+    
+    editableText.addEventListener("input", function() {
+        this.previousElementSibling.style.display = "none"; 
+        this.style.display = "block"; 
+    });
+});
+        function scrollToSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+    function goToHomePage() {
+        window.location.href = "index.html"; // 여기에 원하는 파일명을 넣어주세요
+    }
+    </script>
+</body>
+</html>
